@@ -36,11 +36,10 @@ var adapter = utils.adapter({
     }
 });
 
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-var lastData = "";
-var timer = null;
+const stateDeviceNames = {
+    deviceAll: "All",
+    deviceKnown: "Known"
+}
 
 const stateNames = {
     everyMessage: "every-message",
@@ -48,8 +47,18 @@ const stateNames = {
     messageType: "message-type"
 }
 
-function main() {
-    
+var unknownKeys = {},
+    mappings = {},
+    configMappings = {};
+
+var lastData = "",
+    timer = null;
+
+function createObjects() {
+    for (var i in stateDeviceNames) {
+        adapter.setObjectNotExists(stateDeviceNames[i], { type: 'device', common: { name: stateDeviceNames[i], role: 'device' }, native: {} }, function (err, obj) {
+        });
+    }
     for (var i in stateNames) {
         adapter.setObjectNotExists(stateNames[i], {
             type: 'state',
@@ -62,6 +71,96 @@ function main() {
             native: {}
         });
     }
+}
+
+
+function loadMappings() {
+    var fs = require('fs'),
+        io = fs.readFileSync(__dirname + "/io-package.json"),
+        objs = JSON.parse(io);
+    
+    for (var i in objs.mappings) {
+        configMappings [i] = objs.mappings[i].replace(/\s/g, '_');
+        //adapter.setObjectNotExists(stateDeviceNames.deviceKnown + '.' + objs.mappings[i], {}, function (err, obj) {
+        //    adapter.setState(obj.id, 0, true);
+        //});
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//git clone git://github.com/soef/node-hid.git
+//npm install --build-from-source
+
+function checkMappings(sData, val) {
+    if (!configMappings.hasOwnProperty(sData))
+        return;
+    var name = stateDeviceNames.deviceKnown + '.' + configMappings[sData];
+    if (mappings.hasOwnProperty(sData)) {
+        adapter.setState(name, val, true);
+        return;
+    }
+    mappings[sData] = val;
+    adapter.setObjectNotExists(name, { type: 'state', common: { name: sData, role: 'state', type: 'boolean' }, native: {} }, function (err, obj) {
+        adapter.setState(obj.id, val, true);
+    });
+}
+
+
+function updateUnknownKey(sData, val) {
+    if (!sData || !adapter.config.createUnknownStates) return;
+    var name = stateDeviceNames.deviceAll + '.' + sData;
+    if (!unknownKeys.hasOwnProperty(sData)) {
+        unknownKeys[sData] = val;
+        adapter.setObjectNotExists(name, { type: 'state', common: { name: sData, role: 'state', type: 'boolean' }, native: {} }, function (err, obj) {
+            adapter.setState(name, val, true);
+        });
+        return;
+    }
+    if (unknownKeys[sData] !== val) {
+        unknownKeys[sData] = val;
+        adapter.setState(name, val, true);
+    }
+}
+
+
+function handlesData(sData) {
+    adapter.setState(stateNames.everyMessage, sData, true);
+    if (sData !== lastData) {
+        checkMappings(sData, true);
+        updateUnknownKey(lastData, false);
+        updateUnknownKey(sData, true);
+        adapter.setState(stateNames.messageChanges, sData, true);
+        adapter.setState(stateNames.messageType, "down", true);
+        console.log(sData);
+        lastData = sData;
+    }
+    if (false | adapter.config.keyUpTimeout) {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(function () {
+            timer = null;
+            checkMappings(sData, false);
+            updateUnknownKey(lastData, false);
+            adapter.setState(stateNames.messageType, "up", true);
+            adapter.setState(stateNames.messageChanges, lastData + ".up", true);
+            console.log(lastData + ".up");
+            lastData = "";
+        }, adapter.config.keyUpTimeout);
+    }
+}
+
+
+function main() {
+    
+    createObjects();
+    loadMappings();
+    
+    //handlesData("000000000002");
+    //setTimeout(function () {
+    //    handlesData("000000000001");
+    //}, 2000);
+    //return;    
     
     var devices = HID.devices();
     if (devices) for (var i = 0; i < devices.length; i++) {
@@ -79,24 +178,9 @@ function main() {
     
     device.on("data", function (data) {
         var sData = data.toString('HEX').toUpperCase();
-        
-        
-        adapter.setState(stateNames.everyMessage, sData, true);
-        if (sData !== lastData) {
-            adapter.setState(stateNames.messageChanges, sData, true);
-            adapter.setState(stateNames.messageType, "down", true);
-            console.log(sData);
-            lastData = sData;
-        } else {
-            if (timer) clearTimeout(timer);
-            timer = setTimeout(function () {
-                adapter.setState(stateNames.messageType, "up", true);
-                adapter.setState(stateNames.messageChanges, lastData + ".up", true);
-                console.log(lastData + ".up");
-                lastData = "";
-            }, 200);
-        }
+        handlesData(sData);
     });
+    
     device.on("error", function (err) {
         console.log("err: " + err);
     });

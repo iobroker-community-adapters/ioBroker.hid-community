@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "hid",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "title": "HID",
     "desc": {
       "en": "HID Input Devices",
@@ -18,7 +18,15 @@
   },
   "native": {
     "vendorID": "",
-    "productID": ""
+    "productID": "",
+    "createUnknownStates": false,
+    "keyUpTimeout": 200
+  },
+  "mappings": {
+    "26017F2A55": "AllLightsOn-(AM)",
+    "26017F1867": "AllLightsOff-(Memory)",
+    "26857A21DE": "OK",
+    "26857A55AA": "ESC"
   },
   "instanceObjects": [
   ],
