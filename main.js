@@ -178,6 +178,7 @@ function main() {
     
     device.on("data", function (data) {
         var sData = data.toString('HEX').toUpperCase();
+        adapter.log.debug("HID event deteced: " + sData);
         handlesData(sData);
     });
     

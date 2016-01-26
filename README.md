@@ -15,6 +15,19 @@ Execute the following command in the iobroker root directory (e.g. in /opt/iobro
 npm install iobroker.hid 
 ```
 
+#### Mappings
+Add or edit the mapping section in the io-package.json file.
+Raw data will be shown in the log with debug mode level.
+```
+  "mappings": {
+    "26017F2A55": "AllLightsOn-(AM)",
+    "26017F1867": "AllLightsOff-(Memory)",
+    "26857A21DE": "OK",
+    "26857A55AA": "ESC"
+  },
+```
+
+
 #### Requirements
 
 Windows 10 does not work until you make som changes in the node-hid, hidapi.
