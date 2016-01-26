@@ -1,0 +1,27 @@
+{
+  "common": {
+    "name": "hid",
+    "version": "0.0.4",
+    "title": "HID",
+    "desc": {
+      "en": "HID Input Devices",
+      "de": "HID Eingabegeraete",
+      "ru": "HID Input Devices"
+    },
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "icon": "hid.png",
+    "extIcon": "https://raw.githubusercontent.com/soef/iobroker.hid/master/admin/hid.png",
+    "readme": "https://github.com/soef/iobroker.hid/blob/master/README.md",
+    "loglevel": "info",
+    "type": "hardware"
+  },
+  "native": {
+    "vendorID": "",
+    "productID": ""
+  },
+  "instanceObjects": [
+  ],
+  "objects": [
+  ]
+}
