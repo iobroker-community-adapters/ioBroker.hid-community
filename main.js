@@ -391,21 +391,27 @@ function main() {
         return;
     }
 
-    var hidDevice = new HID.HID(adapter.config.vendorID, adapter.config.productID);
+    try {
+        hidDevice = new HID.HID(adapter.config.vendorID, adapter.config.productID);
+    } catch(e) {
+        adapter.log.error(e.message);
+        adapter.log.error('If running on Windows, see requirements in readme.md. https://github.com/soef/iobroker.hid/blob/master/README.md');
+        return;
+    }
     if (!hidDevice) {
         adapter.log.error("can not open device with VendorID " + adapter.config.vendorID + " and Product ID " + adapter.config.productID);
+        adapter.log.error('If running on Windows, see requirements in readme.md. https://github.com/soef/iobroker.hid/blob/master/README.md');
+        return;
     }
     createAll();
 
     hidDevice.on("data", function (data) {
         var sData = data.toString('hex').toUpperCase();
-        //adapter.log.debug("HID event deteced: " + sData);
         onData(sData);
     });
     hidDevice.on("error", function (err) {
         console.log("err: " + err);
     });
-
     //adapter.subscribeStates('*');
 }
 
