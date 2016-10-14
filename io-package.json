@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "hid",
-    "version": "0.0.5",
+    "version": "0.1.1",
     "title": "HID",
     "desc": {
       "en": "HID Input Devices",
@@ -14,6 +14,8 @@
     "extIcon": "https://raw.githubusercontent.com/soef/iobroker.hid/master/admin/hid.png",
     "readme": "https://github.com/soef/iobroker.hid/blob/master/README.md",
     "loglevel": "info",
+    "messagebox": true,
+    "enabled": true,
     "type": "hardware"
   },
   "native": {

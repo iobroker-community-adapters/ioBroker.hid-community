@@ -1,6 +1,6 @@
 {
   "name": "iobroker.hid",
-  "version": "0.0.5",
+  "version": "0.1.1",
   "description": "HID Adapter",
   "author": {
     "name": "soef",
@@ -24,10 +24,10 @@
     "url": "https://github.com/soef/iobroker.hid"
   },
   "dependencies": {
-    "node-hid": "^0.5.1"
+    "node-hid": "^0.5.1",
+    "soef": "^0.1.4"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "bugs": {
     "url": "https://github.com/soef/iobroker.hid/issues"
   },
