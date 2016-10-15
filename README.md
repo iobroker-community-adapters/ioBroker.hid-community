@@ -67,9 +67,9 @@ To rebuild the node-hid module, change to the irectory:
 ```
 cd <path to iobroker>/node_modules/iobroker.hid/node_modules/node-hid
 ```
-execute:
+execute:                              
 ```
-npm install --build-from-source
+npm install --build-from-source 
 ```
 Restart the iobroker.hid module...
 

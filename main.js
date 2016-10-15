@@ -8,71 +8,6 @@ var hidDevice = null;
 var mappings = {};
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-//function idWitoutNamespace(id, _adapter) {
-//    if (_adapter == undefined) _adapter = adapter;
-//    return id.substr(_adapter.namespace.length+1);
-//}
-//
-//var removeAll = function  (adapter, callback) {
-//
-//    adapter.getStates('*', function (err, states) {
-//        var st = [];
-//        for (var i in states) {
-//            st.push(i);
-//        }
-//        var s = 0;
-//
-//        function dels() {
-//
-//            if (s >= st.length) {
-//                adapter.getChannels(function (err, channels) {
-//                    var c = 0;
-//
-//                    function delc() {
-//                        if (c >= channels.length) {
-//                            adapter.getDevices(function (err, devices) {
-//                                var d = 0;
-//
-//                                function deld() {
-//                                    if (d >= devices.length) {
-//                                        callback();
-//                                        return;
-//                                    }
-//                                    var did = devices[d++]._id;
-//                                    did = idWitoutNamespace(did);
-//                                    //adapter.delDevice(did, function(err,obj) {
-//                                    adapter.deleteDevice(did, function (err,obj) {
-//                                        //adapter.delState(did);
-//                                        deld();
-//                                    });
-//                                }
-//                                deld();
-//                            });
-//                            return;
-//                        }
-//                        adapter.deleteChannel(channels[c]._id, function () {
-//                            delc();
-//                        });
-//                    }
-//                    delc();
-//                });
-//                return;
-//            }
-//            var nid = st[s++];
-//            adapter.delState(nid, function () {
-//                adapter.delObject(nid, function() {
-//                    dels();
-//                });
-//            });
-//            //adapter.deleteState(st[s++], function () {
-//            //    setTimeout(dels, 1);
-//            //});
-//        }
-//        dels();
-//    });
-//};
-
 
 var adapter = soef.Adapter (
     main,
@@ -87,11 +22,6 @@ var adapter = soef.Adapter (
     onUpdate,
     {
         name: 'hid',
-        xready: function () {
-            removeAllObjects(adapter, function (){
-            });
-            return;
-        }
         //install: function (callback) {
         //    adapter.log.info('install');
         //    adapter.getForeignObject('system.adapter.' + adapter.namespace, function(err, obj) {
@@ -116,12 +46,14 @@ function onMessage (obj) {
         case 'discovery':
             var devices = [];
             HID.devices().forEach(function(device) {
-                 devices.push({
-                     name: device.product,
-                     manufacturer: device.manufacturer,
-                     productId: device.productId,
-                     vendorId: device.vendorId
-                 })
+                if (!devices.some(function (d) {
+                        return (d.vendorId == device.vendorId && d.productId == device.productId)
+                })) devices.push({
+                    name: device.product,
+                    manufacturer: device.manufacturer,
+                    productId: device.productId,
+                    vendorId: device.vendorId
+                })
             });
 
             if (obj.callback) {
@@ -150,8 +82,7 @@ var dev;
 var last = {
     data: '',
     cnt: 0,
-    keyup: '',
-    //ts: 0
+    keyup: ''
 };
 
 var sub = {
@@ -189,10 +120,9 @@ var stateNames = {
 function createAll(callback) {
 
     var hidDeviceName = '';
-    var d = HID.devices().find(function(d) {
+    if (HID.devices().find(function(d) {
         return (d.vendorId == adapter.config.vendorID && d.productId == adapter.config.productID);
-    });
-    if (d) {
+    })) {
         hidDeviceName = d.manufacturer + ' - ' + d.product;
     }
     dev = new devices.CDevice(adapter.config.vendorID + '-' + adapter.config.productID, hidDeviceName);
@@ -243,24 +173,23 @@ var upTimer = Object.assign({}, Timer);
 var downTimer = Object.assign({}, Timer);
 
 function upEvent(dev, data, from) {
-    if (data != '') {
-        downTimer.clear();
-        set(sub.action, data, '.up');
-        //adapter.log.debug('keyup: ' + from + ' data=' + data + ' last.keyupp=' + last.keyup + ' cnt=' + last.cnt + ' lastData=' + last.data);
-        if (last.cnt<= 2) upTimer.set(function(_lastKeyUp) {
-            if (last.cnt <= 2) setDSL(sub.single, _lastKeyUp);
-            last.keyup = '';
-        }, adapter.config.keyUpTimeout*2, data);
-        if (last.cnt <= 2 && last.keyup == data) {
-            upTimer.clear();
-            setDSL(sub.double, last.keyup);
-            last.keyup = '';
-        } else {
-            last.keyup = data;
-        }
-        last.data = '';
-        last.cnt = 0;
+    if (data == '') return;
+    downTimer.clear();
+    set(sub.action, data, '.up');
+    //adapter.log.debug('keyup: ' + from + ' data=' + data + ' last.keyupp=' + last.keyup + ' cnt=' + last.cnt + ' lastData=' + last.data);
+    if (last.cnt<= 2) upTimer.set(function(_lastKeyUp) {
+        if (last.cnt <= 2) setDSL(sub.single, _lastKeyUp);
+        last.keyup = '';
+    }, adapter.config.keyUpTimeout*2, data);
+    if (last.cnt <= 2 && last.keyup == data) {
+        upTimer.clear();
+        setDSL(sub.double, last.keyup);
+        last.keyup = '';
+    } else {
+        last.keyup = data;
     }
+    last.data = '';
+    last.cnt = 0;
 }
 
 function onData(data) {
@@ -291,96 +220,9 @@ function onData(data) {
     dev.update();
 }
 
-
-//function onData(data) {
-//    var ext;
-//    if (adapter.config.keyUpTimeout) {
-//        if (timer) {
-//            clearTimeout(timer);
-//            adapter.log.debug('clearTimer');
-//        }
-//        adapter.log.debug('setimg timer: ' + data);
-//        timer = setTimeout(function (_data) {
-//            timer = null;
-//            upEvent(dev, _data, 'to');
-//        }, adapter.config.keyUpTimeout, data);
-//    }
-//
-//    if (lastData == data) {
-//        cnt += 1;
-//        ext = '.repeat';
-//    } else {
-//        upEvent(dev, lastData, 'other key');
-//        set('', data);
-//        ext = '.down';
-//    }
-//    set('func', data, ext);
-//    if (cnt > 1) {
-//        set('repcnt', data, '.' + cnt);
-//    }
-//    dev.update();
-//    //devices.update();
-//    lastData = data;
-//}
-
-
 function normalizeConfig(config) {
     config.keyUpTimeout = parseInt(config.keyUpTimeout) | 0;
 }
-
-//function intVersion(vstr) {
-//    if (!vstr || vstr=='') return 0;
-//    var ar = vstr.split('.');
-//    var iVer = 0;
-//    for (var i=0; i<ar.length; i++) {
-//        iVer *= 1000;
-//        iVer += ar[i] >> 0;
-//    }
-//    return iVer;
-//}
-//
-//function nop() {}
-//
-//function checkIfUpdated(doUpdateCallback, callback) {
-//    if (!doUpdateCallback) return;
-//    if (!callback) callback = nop;
-//    var id = 'system.adapter.' + adapter.namespace;
-//    var vid = id + '.prevVersion';
-//    adapter.states.getState(vid, function(err, state) {
-//        var prevVersion = 0;
-//        var aktVersion = intVersion(adapter.ioPack.common.version);
-//
-//        function callUpdate() {
-//            doUpdateCallback(prevVersion, aktVersion, function(err) {
-//                adapter.states.setState(vid, { val: adapter.ioPack.common.version, ack: true, from: id });
-//                callback();
-//            });
-//        }
-//
-//        if (!err && state) {
-//            prevVersion = intVersion(state.val);
-//            if (prevVersion < aktVersion) {
-//                callUpdate();
-//            } else {
-//                callback();
-//            }
-//            return;
-//        }
-//        adapter.objects.setObject(vid, {
-//            type: 'state',
-//            common: {name: 'version', role: "indicator.state", desc: 'version check for updates'},
-//            native: {}
-//        }, function (err, obj) {
-//            callUpdate();
-//        });
-//    });
-//}
-//
-//function doUpdate(prev,akt, cb) {
-//    cb();
-//}
-
-
 
 function main() {
 
@@ -415,3 +257,4 @@ function main() {
     //adapter.subscribeStates('*');
 }
 
+//--msvs_version=2015

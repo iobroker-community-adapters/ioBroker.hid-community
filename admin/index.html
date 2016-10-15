@@ -65,7 +65,7 @@
 
         socket.emit('getState', 'system.adapter.' + adapter + '.' + instance + '.alive', function (err, state) {
             active = common.enabled || (state && state.val);
-            active = true;
+            //active = true;
         });
         g_onChange = onChange;
 
