@@ -120,9 +120,10 @@ var stateNames = {
 function createAll(callback) {
 
     var hidDeviceName = '';
-    if (HID.devices().find(function(d) {
+    var d = HID.devices().find(function(d) {
         return (d.vendorId == adapter.config.vendorID && d.productId == adapter.config.productID);
-    })) {
+    });
+    if (d) {
         hidDeviceName = d.manufacturer + ' - ' + d.product;
     }
     dev = new devices.CDevice(adapter.config.vendorID + '-' + adapter.config.productID, hidDeviceName);
