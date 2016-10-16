@@ -155,23 +155,42 @@ function setDSL(name, val) {
     set(sub.dsl, val + '.' + name.substr(1));
 }
 
-var Timer = {
-    timer: null,
-    set: function (func, timeout, v1) {
-        if (this.timer) clearTimeout(this.timer);
-        this.timer = setTimeout(function() {
-            this.timer = null;
+//var Timer = {
+//    timer: null,
+//    set: function (func, timeout, v1) {
+//        if (this.timer) clearTimeout(this.timer);
+//        this.timer = setTimeout(function() {
+//            this.timer = null;
+//            func(v1);
+//        }.bind(this), timeout);
+//    },
+//    clear: function() {
+//        if (this.timer) clearTimeout(this.timer);
+//        this.timer = null;
+//    }
+//};
+//var upTimer = Object.assign({}, Timer);
+//var downTimer = Object.assign({}, Timer);
+
+var Timer = function Timer () {
+    if (!(this instanceof Timer)) {
+        return new Timer();
+    }
+    var timer = null;
+    this.set = function (func, timeout, v1) {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(function() {
+            timer = null;
             func(v1);
-        }.bind(this), timeout);
-    },
-    clear: function() {
-        if (this.timer) clearTimeout(this.timer);
-        this.timer = null;
+        }, timeout);
+    };
+    this.clear = function() {
+        if (timer) clearTimeout(timer);
+        timer = null;
     }
 };
-
-var upTimer = Object.assign({}, Timer);
-var downTimer = Object.assign({}, Timer);
+var upTimer = Timer();
+var downTimer = Timer();
 
 function upEvent(dev, data, from) {
     if (data == '') return;
