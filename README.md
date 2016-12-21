@@ -1,6 +1,9 @@
 ![Logo](admin/hid.png)
 ### ioBroker.hid
 
+[![NPM version](http://img.shields.io/npm/v/iobroker.hid.svg)](https://www.npmjs.com/package/iobroker.hid)
+[![Build status](https://ci.appveyor.com/api/projects/status/9w4enhutav1e2leu?svg=true)](https://ci.appveyor.com/project/soef/iobroker-hid)
+
 Adapter for HID devices e.g. Apple Remote
 
 #### Info
@@ -33,6 +36,7 @@ This is not necessary, the raw data states will be created anyway.
 ```
 
 
+<!--
 #### Requirements
 
 The node-hid module does not work on Windows 10 until you make a smal change to the node-hid project.
@@ -72,6 +76,7 @@ execute:
 npm install --build-from-source 
 ```
 Restart the iobroker.hid module...
+-->
 
 ### License
 The MIT License (MIT)

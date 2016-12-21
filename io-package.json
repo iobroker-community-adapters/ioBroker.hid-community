@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "hid",
-    "version": "0.1.9",
+    "version": "0.1.10",
     "title": "HID",
     "desc": {
       "en": "HID Input Devices",
