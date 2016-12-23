@@ -84,7 +84,8 @@ describe('Test ' + adapterShortName + ' adapter', function() {
             config.common.enabled  = true;
             config.common.loglevel = 'debug';
 
-            //config.native.dbtype   = 'sqlite';
+            config.native.vendorID   = 1;
+            config.native.productID   = 2;
 
             setup.setAdapterConfig(config.common, config.native);
 
