@@ -115,7 +115,12 @@ describe('Test ' + adapterShortName + ' adapter', function() {
             if (res) console.log(res);
             if (runningMode === 'daemon') {
                 // disabled test because node-hid fails to initialize on Travis-CI-Linux
-                if (process.env.TRAVIS_OS_NAME && (process.env.TRAVIS_OS_NAME !== 'linux')) expect(res).not.to.be.equal('Cannot check connection');
+                if (!process.env.TRAVIS_OS_NAME || (process.env.TRAVIS_OS_NAME !== 'linux')) {
+                    expect(res).not.to.be.equal('Cannot check connection');
+                } else if (process.env.TRAVIS_OS_NAME && (process.env.TRAVIS_OS_NAME === 'linux') && (res === 'Cannot check connection')) {
+                    console.log('Ignore Adapter start error because travis-ci do not have an usb controller');
+                }
+
             } else {
                 //??
             }
