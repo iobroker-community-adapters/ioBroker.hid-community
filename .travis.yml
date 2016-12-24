@@ -1,6 +1,7 @@
 os:
   - linux
   - osx
+sudo: required
 language: node_js
 node_js:
   - "4"
@@ -16,3 +17,5 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.8
+    - libusb-1.0-0.dev
+    - libudev-dev
