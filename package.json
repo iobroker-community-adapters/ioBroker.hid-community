@@ -41,6 +41,7 @@
     "url": "https://github.com/soef/iobroker.hid/issues"
   },
   "readmeFilename": "README.md",
+  "main": "main.js",
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha"
   }
