@@ -1,7 +1,13 @@
 {
   "common": {
     "name": "hid",
-    "version": "0.1.12",
+    "version": "0.1.14",
+    "news": {
+      "0.1.14": {
+        "en": "Enhance CI testing",
+        "de": "CI testing erweitert"
+      }
+    },
     "title": "HID",
     "desc": {
       "en": "HID Input Devices",
