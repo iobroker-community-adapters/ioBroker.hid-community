@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "hid",
-        "version": "0.1.15",
+        "version": "0.1.16",
         "news": {
+            "0.1.16": {
+                "en": "update basic package-file testing (Apollon77)",
+                "de": "Erweiterung der Tests (Apollon77)"
+            },
             "0.1.15": {
                 "en": "node 0.12 removed from testing",
                 "de": "node 0.12 auf testing entfernt"
