@@ -1,47 +1,51 @@
 {
-  "common": {
-    "name": "hid",
-    "version": "0.1.15",
-    "news": {
-      "0.1.15": {
-        "en": "node 0.12 removed from testing",
-        "de": "node 0.12 auf testing entfernt"
-      },
-      "0.1.14": {
-        "en": "Enhance CI testing",
-        "de": "CI testing erweitert"
-      }
+    "common": {
+        "name": "hid",
+        "version": "0.1.15",
+        "news": {
+            "0.1.15": {
+                "en": "node 0.12 removed from testing",
+                "de": "node 0.12 auf testing entfernt"
+            },
+            "0.1.14": {
+                "en": "Enhance CI testing",
+                "de": "CI testing erweitert"
+            }
+        },
+        "title": "HID",
+        "desc": {
+            "en": "HID Input Devices",
+            "de": "HID Eingabegeraete",
+            "ru": "HID Input Devices"
+        },
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "icon": "hid.png",
+        "extIcon": "https://raw.githubusercontent.com/soef/iobroker.hid/master/admin/hid.png",
+        "readme": "https://github.com/soef/iobroker.hid/blob/master/README.md",
+        "loglevel": "info",
+        "messagebox": true,
+        "enabled": true,
+        "type": "utility",
+        "authors": [
+            {
+                "name": "soef",
+                "email": "soef@gmx.net"
+            }
+        ]
     },
-    "title": "HID",
-    "desc": {
-      "en": "HID Input Devices",
-      "de": "HID Eingabegeraete",
-      "ru": "HID Input Devices"
+    "native": {
+        "vendorID": "",
+        "productID": "",
+        "createUnknownStates": false,
+        "keyUpTimeout": 200
     },
-    "platform": "Javascript/Node.js",
-    "mode": "daemon",
-    "icon": "hid.png",
-    "extIcon": "https://raw.githubusercontent.com/soef/iobroker.hid/master/admin/hid.png",
-    "readme": "https://github.com/soef/iobroker.hid/blob/master/README.md",
-    "loglevel": "info",
-    "messagebox": true,
-    "enabled": true,
-    "type": "hardware"
-  },
-  "native": {
-    "vendorID": "",
-    "productID": "",
-    "createUnknownStates": false,
-    "keyUpTimeout": 200
-  },
-  "mappings": {
-    "26017F2A55": "AllLightsOn-(AM)",
-    "26017F1867": "AllLightsOff-(Memory)",
-    "26857A21DE": "OK",
-    "26857A55AA": "ESC"
-  },
-  "instanceObjects": [
-  ],
-  "objects": [
-  ]
+    "mappings": {
+        "26017F2A55": "AllLightsOn-(AM)",
+        "26017F1867": "AllLightsOff-(Memory)",
+        "26857A21DE": "OK",
+        "26857A55AA": "ESC"
+    },
+    "instanceObjects": [],
+    "objects": []
 }
