@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "hid",
-        "version": "0.1.16",
+        "version": "0.1.17",
         "news": {
+            "0.1.17": {
+                "en": "update readme.md (Bluefox)",
+                "de": "readme.md erweitert (Bluefox)"
+            },
             "0.1.16": {
                 "en": "update basic package-file testing (Apollon77)",
                 "de": "Erweiterung der Tests (Apollon77)"
