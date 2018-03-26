@@ -18,7 +18,7 @@ Execute the following command in the iobroker root directory (e.g. in /opt/iobro
 npm install iobroker.hid 
 ```
 
-####States
+#### States
 
 There are two state groups, raw and key. the key group will only be fired, is a mapping is found.
 
