@@ -26,6 +26,7 @@
             "de": "HID Eingabegeraete",
             "ru": "HID Input Devices"
         },
+        "license": "MIT",
         "platform": "Javascript/Node.js",
         "mode": "daemon",
         "icon": "hid.png",
