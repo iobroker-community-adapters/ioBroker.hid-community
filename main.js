@@ -21,7 +21,7 @@ var adapter = soef.Adapter (
     onMessage,
     onUpdate,
     {
-        name: 'hid',
+        name: 'hid-community',
         //install: function (callback) {
         //    adapter.log.info('install');
         //    adapter.getForeignObject('system.adapter.' + adapter.namespace, function(err, obj) {
