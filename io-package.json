@@ -1,6 +1,6 @@
 {
     "common": {
-        "name": "hid",
+        "name": "hid-community",
         "version": "0.1.17",
         "news": {
             "0.1.17": {
