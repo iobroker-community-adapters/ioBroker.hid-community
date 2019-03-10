@@ -12,6 +12,9 @@ Adapter for HID devices e.g. Apple Remote
 #### Info
 Completly redesigned 
 
+### Initial Creation
+This adapter was initialy created by @soef at https://github.com/soef/ioBroker.hid but not maintained any more, so we moved it to iobroker-community so that bugs could be fixed. thanks @soef for his work.
+
 #### Installation
 Execute the following command in the iobroker root directory (e.g. in /opt/iobroker)
 ```
