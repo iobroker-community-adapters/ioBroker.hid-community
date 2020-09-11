@@ -26,7 +26,7 @@
   "dependencies": {
     "node-hid": "^0.7.8",
     "soef": "^0.1.4",
-    "rimraf": "^2.4.3",
+    "rimraf": "^3.0.2",
     "@iobroker/adapter-core": "^1.0.3"
   },
   "devDependencies": {
