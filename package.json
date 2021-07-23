@@ -27,7 +27,7 @@
     "node-hid": "^0.7.8",
     "soef": "^0.1.4",
     "rimraf": "^2.4.3",
-    "@iobroker/adapter-core": "^1.0.3"
+    "@iobroker/adapter-core": "^2.5.1"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
