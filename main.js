@@ -1,7 +1,6 @@
 ﻿"use strict";
 
-var utils = require(__dirname + '/lib/utils'),
-    soef = require('soef'),
+var soef = require('soef'),
     HID = require('node-hid');
 
 var hidDevice = null;
