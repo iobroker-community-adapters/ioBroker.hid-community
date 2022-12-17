@@ -1,6 +1,6 @@
 {
     "common": {
-        "name": "hid-community",
+        "name": "hid",
         "version": "0.1.17",
         "news": {
             "0.1.17": {
@@ -21,6 +21,19 @@
             }
         },
         "title": "HID",
+        "titleLang": {
+            "en": "HID",
+            "de": "HID",
+            "ru": "СКРЫТЬ",
+            "pt": "HID",
+            "nl": "HID",
+            "fr": "HID",
+            "it": "HID",
+            "es": "HID",
+            "pl": "HID",
+            "uk": "ХІД",
+            "zh-cn": "HID"
+        },
         "desc": {
             "en": "HID Input Devices",
             "de": "HID Eingabegeraete",
@@ -41,7 +54,15 @@
                 "name": "soef",
                 "email": "soef@gmx.net"
             }
-        ]
+        ],
+        "dependencies": [
+            {
+                "js-controller": ">=3.0.0"
+            }
+        ],
+        "dataSource": "push",
+        "connectionType": "local",
+        "tier": 2
     },
     "native": {
         "vendorID": "",
