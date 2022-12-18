@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-var soef = require('soef'),
+var soef = require('./lib/soef'),
     HID = require('node-hid');
 
 var hidDevice = null;
