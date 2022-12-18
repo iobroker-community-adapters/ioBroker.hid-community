@@ -43,8 +43,8 @@
         "platform": "Javascript/Node.js",
         "mode": "daemon",
         "icon": "hid.png",
-        "extIcon": "https://raw.githubusercontent.com/soef/iobroker.hid/master/admin/hid.png",
-        "readme": "https://github.com/soef/iobroker.hid/blob/master/README.md",
+        "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/iobroker.hid/master/admin/hid.png",
+        "readme": "https://github.com/iobroker-community-adapters/iobroker.hid/blob/master/README.md",
         "loglevel": "info",
         "messagebox": true,
         "enabled": true,
@@ -62,7 +62,12 @@
         ],
         "dataSource": "push",
         "connectionType": "local",
-        "tier": 2
+        "tier": 2,
+        "osDependencies": {
+            "linux": [
+                "libusb-1.0-0-dev"
+            ]
+        }
     },
     "native": {
         "vendorID": "",

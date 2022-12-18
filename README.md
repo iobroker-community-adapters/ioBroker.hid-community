@@ -1,35 +1,32 @@
 ![Logo](admin/hid.png)
-### ioBroker.hid
+# ioBroker.hid
 
 ![Number of Installations](http://iobroker.live/badges/hid-installed.svg) ![Number of Installations](http://iobroker.live/badges/hid-stable.svg) [![NPM version](http://img.shields.io/npm/v/iobroker.hid.svg)](https://www.npmjs.com/package/iobroker.hid)
 [![Build status](https://ci.appveyor.com/api/projects/status/9w4enhutav1e2leu?svg=true)](https://ci.appveyor.com/project/soef/iobroker-hid)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/soef/iobroker.yamaha/blob/master/LICENSE)
 
-#### Description
-
+## Description
 Adapter for HID devices e.g. Apple Remote
 
-#### Info
-Completly redesigned 
-
-### Initial Creation
+## Initial Creation
 This adapter was initialy created by @soef at https://github.com/soef/ioBroker.hid but not maintained any more, so we moved it to iobroker-community so that bugs could be fixed. thanks @soef for his work.
 
-#### Installation
-Execute the following command in the iobroker root directory (e.g. in /opt/iobroker)
-```
-npm install iobroker.hid 
-```
+## Installation
+Please install bia Admin
 
-#### States
+It can be that the following additional things are needed
+* **prepare permissions**: execute `iob fix` 
+* **Install additional packages**: `sudo apt install libusb-1.0-0-dev`
+* **Setting proper rights**: If the device can not be opened please look at https://github.com/node-hid/node-hid#udev-device-permissions
 
+## States
 There are two state groups, raw and key. the key group will only be fired, is a mapping is found.
 
 Only one of the states xxx.double, xxx.single and xxx.long will change on an event.
 The state xxx.dsl gets the results .double, single or long.
 Action indicates down, up or repeat.
 
-#### Mappings
+## Mappings
 Add or edit the mapping section in the io-package.json file to see the names of the key codes. 
 This is not necessary, the raw data states will be created anyway. 
 ```

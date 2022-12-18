@@ -12,7 +12,7 @@
       "email": "soef@gmx.net"
     }
   ],
-  "homepage": "https://github.com/soef/iobroker.hid",
+  "homepage": "https://github.com/iobroker-community-adapters/iobroker.hid",
   "license": "MIT",
   "keywords": [
     "ioBroker",
@@ -21,7 +21,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/soef/iobroker.hid"
+    "url": "https://github.com/iobroker-community-adapters/iobroker.hid"
   },
   "dependencies": {
     "node-hid": "^2.1.2",
@@ -36,7 +36,7 @@
     "chai": "^4.3.7"
   },
   "bugs": {
-    "url": "https://github.com/soef/iobroker.hid/issues"
+    "url": "https://github.com/iobroker-community-adapters/iobroker.hid/issues"
   },
   "readmeFilename": "README.md",
   "main": "main.js",
