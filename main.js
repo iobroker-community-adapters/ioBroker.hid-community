@@ -45,6 +45,7 @@ function onMessage (obj) {
         case 'discovery':
             var devices = [];
             HID.devices().forEach(function(device) {
+                adapter.log.debug('device found: ' + JSON.stringify(device));
                 if (!devices.some(function (d) {
                         return (d.vendorId == device.vendorId && d.productId == device.productId)
                 })) devices.push({
@@ -55,6 +56,7 @@ function onMessage (obj) {
                 })
             });
 
+            adapter.log.debug('discovery result: ' + JSON.stringify(devices));
             if (obj.callback) {
                 adapter.sendTo (obj.from, obj.command, JSON.stringify(devices), obj.callback);
             }
