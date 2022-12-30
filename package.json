@@ -1,6 +1,6 @@
 {
   "name": "iobroker.hid",
-  "version": "0.1.17",
+  "version": "0.2.0",
   "description": "HID Adapter",
   "author": {
     "name": "soef",

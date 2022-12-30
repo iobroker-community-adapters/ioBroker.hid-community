@@ -1,86 +1,99 @@
 {
-    "common": {
-        "name": "hid",
-        "version": "0.1.17",
-        "news": {
-            "0.1.17": {
-                "en": "update readme.md (Bluefox)",
-                "de": "readme.md erweitert (Bluefox)"
-            },
-            "0.1.16": {
-                "en": "update basic package-file testing (Apollon77)",
-                "de": "Erweiterung der Tests (Apollon77)"
-            },
-            "0.1.15": {
-                "en": "node 0.12 removed from testing",
-                "de": "node 0.12 auf testing entfernt"
-            },
-            "0.1.14": {
-                "en": "Enhance CI testing",
-                "de": "CI testing erweitert"
-            }
-        },
-        "title": "HID",
-        "titleLang": {
-            "en": "HID",
-            "de": "HID",
-            "ru": "СКРЫТЬ",
-            "pt": "HID",
-            "nl": "HID",
-            "fr": "HID",
-            "it": "HID",
-            "es": "HID",
-            "pl": "HID",
-            "uk": "ХІД",
-            "zh-cn": "HID"
-        },
-        "desc": {
-            "en": "HID Input Devices",
-            "de": "HID Eingabegeraete",
-            "ru": "HID Input Devices"
-        },
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "mode": "daemon",
-        "icon": "hid.png",
-        "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/iobroker.hid/master/admin/hid.png",
-        "readme": "https://github.com/iobroker-community-adapters/iobroker.hid/blob/master/README.md",
-        "loglevel": "info",
-        "messagebox": true,
-        "enabled": true,
-        "type": "utility",
-        "authors": [
-            {
-                "name": "soef",
-                "email": "soef@gmx.net"
-            }
-        ],
-        "dependencies": [
-            {
-                "js-controller": ">=3.0.0"
-            }
-        ],
-        "dataSource": "push",
-        "connectionType": "local",
-        "tier": 2,
-        "osDependencies": {
-            "linux": [
-                "libusb-1.0-0-dev"
-            ]
-        }
+  "common": {
+    "name": "hid",
+    "version": "0.2.0",
+    "news": {
+      "0.2.0": {
+        "en": "General updates",
+        "de": "Allgemeine Aktualisierungen",
+        "ru": "Общие обновления",
+        "pt": "Atualizações gerais",
+        "nl": "Generaal updates",
+        "fr": "Mises à jour générales",
+        "it": "Aggiornamenti generali",
+        "es": "Actualizaciones generales",
+        "pl": "Aktualizacja",
+        "uk": "Загальні оновлення",
+        "zh-cn": "A. 总更新"
+      },
+      "0.1.17": {
+        "en": "update readme.md (Bluefox)",
+        "de": "readme.md erweitert (Bluefox)"
+      },
+      "0.1.16": {
+        "en": "update basic package-file testing (Apollon77)",
+        "de": "Erweiterung der Tests (Apollon77)"
+      },
+      "0.1.15": {
+        "en": "node 0.12 removed from testing",
+        "de": "node 0.12 auf testing entfernt"
+      },
+      "0.1.14": {
+        "en": "Enhance CI testing",
+        "de": "CI testing erweitert"
+      }
     },
-    "native": {
-        "vendorID": "",
-        "productID": "",
-        "createUnknownStates": false,
-        "keyUpTimeout": 200
+    "title": "HID",
+    "titleLang": {
+      "en": "HID",
+      "de": "HID",
+      "ru": "СКРЫТЬ",
+      "pt": "HID",
+      "nl": "HID",
+      "fr": "HID",
+      "it": "HID",
+      "es": "HID",
+      "pl": "HID",
+      "uk": "ХІД",
+      "zh-cn": "HID"
     },
-    "mappings": {
-        "26017F2A55": "AllLightsOn-(AM)",
-        "26017F1867": "AllLightsOff-(Memory)",
-        "26857A21DE": "OK",
-        "26857A55AA": "ESC"
+    "desc": {
+      "en": "HID Input Devices",
+      "de": "HID Eingabegeraete",
+      "ru": "HID Input Devices"
     },
-    "instanceObjects": [],
-    "objects": []
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "icon": "hid.png",
+    "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/iobroker.hid/master/admin/hid.png",
+    "readme": "https://github.com/iobroker-community-adapters/iobroker.hid/blob/master/README.md",
+    "loglevel": "info",
+    "messagebox": true,
+    "enabled": true,
+    "type": "utility",
+    "authors": [
+      {
+        "name": "soef",
+        "email": "soef@gmx.net"
+      }
+    ],
+    "dependencies": [
+      {
+        "js-controller": ">=3.0.0"
+      }
+    ],
+    "dataSource": "push",
+    "connectionType": "local",
+    "tier": 2,
+    "osDependencies": {
+      "linux": [
+        "libusb-1.0-0-dev"
+      ]
+    }
+  },
+  "native": {
+    "vendorID": "",
+    "productID": "",
+    "createUnknownStates": false,
+    "keyUpTimeout": 200
+  },
+  "mappings": {
+    "26017F2A55": "AllLightsOn-(AM)",
+    "26017F1867": "AllLightsOff-(Memory)",
+    "26857A21DE": "OK",
+    "26857A55AA": "ESC"
+  },
+  "instanceObjects": [],
+  "objects": []
 }

@@ -82,8 +82,7 @@ Restart the iobroker.hid module...
 -->
 
 ## Changelog
-
-### __WORK IN PROGRESS__
+### 0.2.0 (2022-12-30)
 * General updates
 
 ## License
