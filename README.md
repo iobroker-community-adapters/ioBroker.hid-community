@@ -83,6 +83,9 @@ Restart the iobroker.hid module...
 
 ## Changelog
 
+### __WORK IN PROGRESS__
+* General updates
+
 ## License
 The MIT License (MIT)
 
