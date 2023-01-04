@@ -1,6 +1,6 @@
 {
   "common": {
-    "name": "hid",
+    "name": "hid-community",
     "version": "0.2.0",
     "news": {
       "0.2.0": {
@@ -56,8 +56,8 @@
     "platform": "Javascript/Node.js",
     "mode": "daemon",
     "icon": "hid.png",
-    "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/iobroker.hid/master/admin/hid.png",
-    "readme": "https://github.com/iobroker-community-adapters/iobroker.hid/blob/master/README.md",
+    "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/iobroker.hid-community/master/admin/hid.png",
+    "readme": "https://github.com/iobroker-community-adapters/iobroker.hid-community/blob/master/README.md",
     "loglevel": "info",
     "messagebox": true,
     "enabled": true,

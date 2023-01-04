@@ -1,7 +1,7 @@
 ![Logo](admin/hid.png)
-# ioBroker.hid
+# ioBroker.hid-community
 
-![Number of Installations](http://iobroker.live/badges/hid-installed.svg) ![Number of Installations](http://iobroker.live/badges/hid-stable.svg) [![NPM version](http://img.shields.io/npm/v/iobroker.hid.svg)](https://www.npmjs.com/package/iobroker.hid)
+![Number of Installations](http://iobroker.live/badges/hid-installed.svg) ![Number of Installations](http://iobroker.live/badges/hid-stable.svg) [![NPM version](http://img.shields.io/npm/v/iobroker.hid-community.svg)](https://www.npmjs.com/package/iobroker.hid-community)
 [![Build status](https://ci.appveyor.com/api/projects/status/9w4enhutav1e2leu?svg=true)](https://ci.appveyor.com/project/soef/iobroker-hid)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/soef/iobroker.yamaha/blob/master/LICENSE)
 
@@ -43,9 +43,9 @@ This is not necessary, the raw data states will be created anyway.
 #### Requirements
 
 The node-hid module does not work on Windows 10 until you make a smal change to the node-hid project.
-After installation of iobroker.hid edit:
+After installation of iobroker.hid-community edit:
 ```
-<path to iobroker>/node_modules/iobroker.hid/node_modules/node-hid/hidapi/windows/hid.c
+<path to iobroker>/node_modules/iobroker.hid-community/node_modules/node-hid/hidapi/windows/hid.c
 ```
 Find:
 ```
@@ -72,13 +72,13 @@ static HANDLE open_device(const char *path, BOOL enumerate)
 ```
 To rebuild the node-hid module, change to the irectory:
 ```
-cd <path to iobroker>/node_modules/iobroker.hid/node_modules/node-hid
+cd <path to iobroker>/node_modules/iobroker.hid-community/node_modules/node-hid
 ```
 execute:                              
 ```
 npm install --build-from-source 
 ```
-Restart the iobroker.hid module...
+Restart the iobroker.hid-community module...
 -->
 
 ## Changelog
