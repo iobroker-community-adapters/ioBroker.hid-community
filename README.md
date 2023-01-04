@@ -82,8 +82,7 @@ Restart the iobroker.hid-community module...
 -->
 
 ## Changelog
-
-### __WORK IN PROGRESS__
+### 0.3.0 (2023-01-04)
 * Renamed to hid-community
 
 ### 0.2.0 (2022-12-30)

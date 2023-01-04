@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "hid-community",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "news": {
+      "0.3.0": {
+        "en": "Renamed to hid-community",
+        "de": "Umbenannt zur Hid-Gemeinschaft",
+        "ru": "Переименован на hid-community",
+        "pt": "Renamed a hid-community",
+        "nl": "Hernoemd om zich te verbergen",
+        "fr": "Renamed to hid-community",
+        "it": "Rinominata alla comunità hid",
+        "es": "Renombrado para la comunidad oculta",
+        "pl": "Nazwa hid-community",
+        "uk": "Перейменований для hid-community",
+        "zh-cn": "重新名称"
+      },
       "0.2.0": {
         "en": "General updates",
         "de": "Allgemeine Aktualisierungen",
