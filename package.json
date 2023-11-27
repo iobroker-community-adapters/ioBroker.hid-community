@@ -27,7 +27,7 @@
     "node": ">=16"
   },
   "dependencies": {
-    "node-hid": "^2.1.2",
+    "node-hid": "^2.2.0",
     "@iobroker/adapter-core": "^2.6.8"
   },
   "devDependencies": {
