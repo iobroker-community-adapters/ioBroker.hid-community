@@ -46,7 +46,6 @@
         "de": "CI testing erweitert"
       }
     },
-    "title": "HID",
     "titleLang": {
       "en": "HID",
       "de": "HID",
@@ -65,13 +64,17 @@
       "de": "HID Eingabegeraete",
       "ru": "HID Input Devices"
     },
-    "license": "MIT",
+    "licenseInformation": {
+      "license": "MIT",
+      "type": "free"
+    },
     "platform": "Javascript/Node.js",
     "mode": "daemon",
     "icon": "hid.png",
     "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/iobroker.hid-community/master/admin/hid.png",
     "readme": "https://github.com/iobroker-community-adapters/iobroker.hid-community/blob/master/README.md",
     "loglevel": "info",
+    "tier": 2,
     "messagebox": true,
     "enabled": true,
     "type": "utility",
@@ -83,12 +86,16 @@
     ],
     "dependencies": [
       {
-        "js-controller": ">=3.0.0"
+        "js-controller": ">=5.0.19"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=6.13.16"
       }
     ],
     "dataSource": "push",
     "connectionType": "local",
-    "tier": 2,
     "osDependencies": {
       "linux": [
         "libusb-1.0-0-dev"
