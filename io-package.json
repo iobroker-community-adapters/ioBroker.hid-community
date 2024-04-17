@@ -84,6 +84,9 @@
         "email": "soef@gmx.net"
       }
     ],
+    "adminUI": {
+      "config": "html"
+    },
     "dependencies": [
       {
         "js-controller": ">=5.0.19"
