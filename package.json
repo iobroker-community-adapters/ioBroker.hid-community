@@ -2,15 +2,10 @@
   "name": "iobroker.hid-community",
   "version": "0.4.0",
   "description": "HID Adapter",
-  "author": {
-    "name": "soef",
-    "email": "soef@gmx.net"
-  },
+  "author": "soef <soef@gmx.net>",
   "contributors": [
-    {
-      "name": "soef",
-      "email": "soef@gmx.net"
-    }
+    "soef <soef@gmx.net>",
+    "iobroker-community-adapters <iobroker-community-adapters@gmx.de>"
   ],
   "homepage": "https://github.com/iobroker-community-adapters/iobroker.hid-community",
   "license": "MIT",
