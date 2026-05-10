@@ -102,6 +102,8 @@ Restart the iobroker.hid-community module...
 ### 0.2.0 (2022-12-30)
 * General updates
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 The MIT License (MIT)
 
