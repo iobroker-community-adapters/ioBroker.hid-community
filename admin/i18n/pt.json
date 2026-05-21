@@ -1,0 +1,11 @@
+{
+    "Delay before key-up state reset (ms)": "Atraso antes de redefinir o estado de soltar tecla (ms)",
+    "Device": "Dispositivo",
+    "HID Adapter Settings": "Configurações do adaptador HID",
+    "Info": "Informação",
+    "on save adapter restarts with new config immediately": "ao salvar, o adaptador reinicia imediatamente com a nova configuração",
+    "Product ID": "ID do produto",
+    "Settings": "Configurações",
+    "Timeout for Key up": "Tempo limite para soltar tecla",
+    "Vendor ID": "ID do fornecedor"
+}

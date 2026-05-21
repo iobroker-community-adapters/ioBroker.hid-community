@@ -1,0 +1,11 @@
+{
+    "Delay before key-up state reset (ms)": "Opóźnienie przed resetem stanu puszczenia klawisza (ms)",
+    "Device": "Urządzenie",
+    "HID Adapter Settings": "Ustawienia adaptera HID",
+    "Info": "Informacje",
+    "on save adapter restarts with new config immediately": "po zapisaniu adapter natychmiast uruchamia się ponownie z nową konfiguracją",
+    "Product ID": "ID produktu",
+    "Settings": "Ustawienia",
+    "Timeout for Key up": "Limit czasu dla puszczenia klawisza",
+    "Vendor ID": "ID dostawcy"
+}

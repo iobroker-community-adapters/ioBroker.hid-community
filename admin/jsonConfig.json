@@ -1,0 +1,85 @@
+{
+    "type": "panel",
+    "items": {
+        "_settingsHeader": {
+            "type": "header",
+            "text": "HID Adapter Settings",
+            "xs": 12,
+            "sm": 12,
+            "md": 12,
+            "lg": 12,
+            "xl": 12
+        },
+        "_deviceHeader": {
+            "type": "header",
+            "text": "Device",
+            "newLine": true,
+            "xs": 12,
+            "sm": 12,
+            "md": 12,
+            "lg": 12,
+            "xl": 12
+        },
+        "vendorID": {
+            "type": "text",
+            "label": "Vendor ID",
+            "newLine": true,
+            "xs": 12,
+            "sm": 12,
+            "md": 6,
+            "lg": 4,
+            "xl": 3
+        },
+        "productID": {
+            "type": "text",
+            "label": "Product ID",
+            "xs": 12,
+            "sm": 12,
+            "md": 6,
+            "lg": 4,
+            "xl": 3
+        },
+        "_advancedHeader": {
+            "type": "header",
+            "text": "Settings",
+            "newLine": true,
+            "xs": 12,
+            "sm": 12,
+            "md": 12,
+            "lg": 12,
+            "xl": 12
+        },
+        "keyUpTimeout": {
+            "type": "number",
+            "label": "Timeout for Key up",
+            "help": "Delay before key-up state reset (ms)",
+            "min": 0,
+            "newLine": true,
+            "xs": 12,
+            "sm": 12,
+            "md": 6,
+            "lg": 4,
+            "xl": 3
+        },
+        "_infoHeader": {
+            "type": "header",
+            "text": "Info",
+            "newLine": true,
+            "xs": 12,
+            "sm": 12,
+            "md": 12,
+            "lg": 12,
+            "xl": 12
+        },
+        "_infoText": {
+            "type": "staticText",
+            "text": "on save adapter restarts with new config immediately",
+            "newLine": true,
+            "xs": 12,
+            "sm": 12,
+            "md": 12,
+            "lg": 12,
+            "xl": 12
+        }
+    }
+}

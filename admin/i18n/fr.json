@@ -1,0 +1,11 @@
+{
+    "Delay before key-up state reset (ms)": "Délai avant réinitialisation de l'état relâchement de touche (ms)",
+    "Device": "Appareil",
+    "HID Adapter Settings": "Paramètres de l'adaptateur HID",
+    "Info": "Info",
+    "on save adapter restarts with new config immediately": "à l'enregistrement, l'adaptateur redémarre immédiatement avec la nouvelle configuration",
+    "Product ID": "ID produit",
+    "Settings": "Paramètres",
+    "Timeout for Key up": "Temporisation pour relâchement de touche",
+    "Vendor ID": "ID fournisseur"
+}

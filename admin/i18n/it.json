@@ -1,0 +1,11 @@
+{
+    "Delay before key-up state reset (ms)": "Ritardo prima del reset dello stato rilascio tasto (ms)",
+    "Device": "Dispositivo",
+    "HID Adapter Settings": "Impostazioni adattatore HID",
+    "Info": "Informazioni",
+    "on save adapter restarts with new config immediately": "al salvataggio l'adattatore si riavvia immediatamente con la nuova configurazione",
+    "Product ID": "ID prodotto",
+    "Settings": "Impostazioni",
+    "Timeout for Key up": "Timeout per rilascio tasto",
+    "Vendor ID": "ID fornitore"
+}

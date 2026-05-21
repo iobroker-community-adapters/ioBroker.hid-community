@@ -1,0 +1,11 @@
+{
+    "Delay before key-up state reset (ms)": "Затримка перед скиданням стану відпускання клавіші (мс)",
+    "Device": "Пристрій",
+    "HID Adapter Settings": "Налаштування адаптера HID",
+    "Info": "Інформація",
+    "on save adapter restarts with new config immediately": "після збереження адаптер одразу перезапускається з новою конфігурацією",
+    "Product ID": "Ідентифікатор продукту",
+    "Settings": "Налаштування",
+    "Timeout for Key up": "Тайм-аут для відпускання клавіші",
+    "Vendor ID": "Ідентифікатор постачальника"
+}

@@ -1,0 +1,11 @@
+{
+    "Delay before key-up state reset (ms)": "Vertraging voor reset van toets-loslaatstatus (ms)",
+    "Device": "Apparaat",
+    "HID Adapter Settings": "HID-adapterinstellingen",
+    "Info": "Info",
+    "on save adapter restarts with new config immediately": "bij opslaan start de adapter direct opnieuw met de nieuwe configuratie",
+    "Product ID": "Product-ID",
+    "Settings": "Instellingen",
+    "Timeout for Key up": "Timeout voor toets loslaten",
+    "Vendor ID": "Leveranciers-ID"
+}

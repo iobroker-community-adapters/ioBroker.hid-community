@@ -1,0 +1,11 @@
+{
+    "Delay before key-up state reset (ms)": "按键抬起状态重置前延迟（毫秒）",
+    "Device": "设备",
+    "HID Adapter Settings": "HID 适配器设置",
+    "Info": "信息",
+    "on save adapter restarts with new config immediately": "保存后适配器会立即使用新配置重启",
+    "Product ID": "产品 ID",
+    "Settings": "设置",
+    "Timeout for Key up": "按键抬起超时",
+    "Vendor ID": "供应商 ID"
+}
