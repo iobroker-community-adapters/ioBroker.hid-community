@@ -52,6 +52,7 @@
         "keyUpTimeout": {
             "type": "number",
             "label": "Timeout for Key up",
+            "help": "Delay before key-up state reset (ms)",
             "min": 0,
             "newLine": true,
             "xs": 12,

@@ -1,5 +1,6 @@
 {
     "Device": "Device",
+    "Delay before key-up state reset (ms)": "Delay before key-up state reset (ms)",
     "HID Adapter Settings": "HID Adapter Settings",
     "Info": "Info",
     "on save adapter restarts with new config immediately": "on save adapter restarts with new config immediately",

@@ -1,5 +1,6 @@
 {
     "Device": "Gerät",
+    "Delay before key-up state reset (ms)": "Verzögerung bis zum Zurücksetzen von Taste-loslassen (ms)",
     "HID Adapter Settings": "HID Adapter Einstellungen",
     "Info": "Info",
     "on save adapter restarts with new config immediately": "Beim Speichern der Einstellungen wird der Adapter sofort neu gestartet.",
