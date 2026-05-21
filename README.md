@@ -92,6 +92,7 @@ Restart the iobroker.hid-community module...
 - (copilot) Adapter requires admin >= 7.7.22 now
 - (copilot) Adapter requires js-controller >= 6.0.11 now
 - (copilot) Adapter requires admin >= 7.6.17 now
+- (copilot) **ENHANCED**: Migrated admin configuration UI to jsonConfig with responsive layout and i18n files
 
 ### 0.4.0 (2024-04-17)
 * (mcm1957) Adapter requires node.js 18 and js-controller >= 5 now

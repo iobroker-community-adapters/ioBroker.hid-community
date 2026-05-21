@@ -1,0 +1,10 @@
+{
+    "Device": "Устройство",
+    "HID Adapter Settings": "Настройки адаптера HID",
+    "Info": "Информация",
+    "on save adapter restarts with new config immediately": "Сразу после сохранения настроек адаптер перезапустится с новыми значениями",
+    "Product ID": "Идентификатор продукта",
+    "Settings": "Настройки",
+    "Timeout for Key up": "Таймаут отпускания клавиши",
+    "Vendor ID": "Идентификатор поставщика"
+}

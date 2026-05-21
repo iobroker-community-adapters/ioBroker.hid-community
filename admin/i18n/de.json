@@ -1,0 +1,10 @@
+{
+    "Device": "Gerät",
+    "HID Adapter Settings": "HID Adapter Einstellungen",
+    "Info": "Info",
+    "on save adapter restarts with new config immediately": "Beim Speichern der Einstellungen wird der Adapter sofort neu gestartet.",
+    "Product ID": "Produkt-ID",
+    "Settings": "Einstellungen",
+    "Timeout for Key up": "Timeout für Taste loslassen",
+    "Vendor ID": "Hersteller-ID"
+}
