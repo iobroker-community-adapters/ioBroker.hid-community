@@ -1,6 +1,6 @@
 {
-    "Device": "Устройство",
     "Delay before key-up state reset (ms)": "Задержка до сброса состояния отпускания клавиши (мс)",
+    "Device": "Устройство",
     "HID Adapter Settings": "Настройки адаптера HID",
     "Info": "Информация",
     "on save adapter restarts with new config immediately": "Сразу после сохранения настроек адаптер перезапустится с новыми значениями",
